@@ -10,6 +10,7 @@ idf_component_register(
 		 "message_handler.cpp"
 		 "heartbeat.cpp"
 		 "face_sender.cpp"
+		 "time_sync.c"
 		 
 	INCLUDE_DIRS "."
 	REQUIRES 

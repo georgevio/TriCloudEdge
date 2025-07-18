@@ -32,4 +32,17 @@
 #define WEBSOCKET_CONNECTED_BIT   (1 << 1)
 #define FRAME_ACK_BIT             (1 << 2)
 
+/* Time & Timezone setting. 
+ * For AWS, UTC is strongly recommended.
+ * A list of timezone strings:
+ * https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
+ * 
+ * Tried to automate the TIMEZONE, but it is complicated and rather
+ * computation consuming, so kept it manual: CET-1 Central Europe.
+ */
+#define TIMEZONE "CET-1CEST,M3.5.0,M10.5.0/3" // UTC+1 or CET
+
+#define NTP_SERVER_1 "pool.ntp.org"
+#define NTP_SERVER_2 "time.google.com"
+
 #endif // CONFIG_H

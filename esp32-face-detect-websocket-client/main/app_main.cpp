@@ -17,6 +17,11 @@
 #include "face_sender.h"
 #include "heartbeat.h"
 
+// C-style header for time synchronization
+extern "C" {
+#include "time_sync.h"
+}
+
 static EventGroupHandle_t s_app_event_group;
 static QueueHandle_t xQueueAIFrame = NULL;
 static QueueHandle_t xQueueFaceFrame = NULL;
@@ -49,6 +54,7 @@ static void configure_system_logging() {
     esp_log_level_set("WEBSOCK_CLIENT", ESP_LOG_INFO);
     esp_log_level_set("FACE_SENDER", ESP_LOG_INFO);
     esp_log_level_set("MSG_HANDLER", ESP_LOG_INFO);
+    esp_log_level_set("TIME_SYNC", ESP_LOG_INFO);
 }
 
 /**
@@ -65,6 +71,16 @@ static void app_event_handler(void* arg, esp_event_base_t event_base, int32_t ev
     }
     else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         xEventGroupSetBits(s_app_event_group, WIFI_CONNECTED_BIT);
+        
+        ESP_LOGD(TAG, "Wi-Fi connected, synchronizing time...");
+        char time_buffer[64];
+        if (time_sync_init(time_buffer, sizeof(time_buffer)) == ESP_OK) {
+            ESP_LOGI(TAG, "Time synced: %s", time_buffer);
+        } else {
+            ESP_LOGE(TAG, "Time synch failed...Using internat clock");
+            // COntinue even without time sync
+        }
+
         websocket_client_start(s_app_event_group);
     }
 }
