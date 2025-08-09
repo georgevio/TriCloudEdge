@@ -11,15 +11,15 @@
 #include "who_human_face_detection.hpp"
 
 // app-level modules
-#include "config.h"
-#include "wifi.h"
+#include "utils/config.h"
+#include "utils/wifi.h"
 #include "websocket_client.h"
 #include "face_sender.h"
-#include "heartbeat.h"
+#include "utils/heartbeat.h"
 
 // C-style header for time synchronization
 extern "C" {
-#include "time_sync.h"
+#include "utils/time_sync.h"
 }
 
 static EventGroupHandle_t s_app_event_group;

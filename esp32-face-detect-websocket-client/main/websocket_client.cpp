@@ -2,8 +2,8 @@
 #include "message_handler.h"
 #include "esp_websocket_client.h"
 #include "esp_log.h"
-#include "secret.h"
-#include "config.h"
+#include "utils/secret.h"
+#include "utils/config.h"
 #include "freertos/event_groups.h"
 #include <string.h>
 

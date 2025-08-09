@@ -3,7 +3,7 @@
 #include "who_human_face_detection.hpp"
 #include "websocket_client.h"
 #include "esp_log.h"
-#include "config.h"
+#include "utils/config.h"
 #include <vector>
 #include <inttypes.h>
 #include <algorithm>
@@ -163,7 +163,13 @@ void face_sending_task(void* pvParameters) {
 
             } while(0);
 
+            // TODO: is this a memory leak?
             esp_camera_fb_return(full_frame);
+            // if yes, this is safer
+            // Correct way to free the manually allocated frame buffer
+            //free(full_frame->buf);
+            //free(full_frame);
+
             if (cropped_buf) free(cropped_buf);
             free(face_data);
             

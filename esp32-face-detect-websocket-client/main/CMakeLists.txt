@@ -4,15 +4,15 @@
 
 idf_component_register(
 	SRCS "app_main.cpp" 
-		 "wifi.c" 
+		 "utils/wifi.c" 
 		 "websocket_client.cpp"
 		 "face_sender.cpp"
 		 "message_handler.cpp"
-		 "heartbeat.cpp"
+		 "utils/heartbeat.cpp"
 		 "face_sender.cpp"
-		 "time_sync.c"
+		 "utils/time_sync.c"
 		 
-	INCLUDE_DIRS "."
+	INCLUDE_DIRS "." utils
 	REQUIRES 
 			json
 			esp_websocket_client

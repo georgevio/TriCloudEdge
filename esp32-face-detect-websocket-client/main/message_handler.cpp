@@ -1,7 +1,7 @@
 #include "message_handler.h"
 #include "esp_log.h"
 #include "cJSON.h"
-#include "config.h"
+#include "utils/config.h"
 #include <string.h>
 #include <stdio.h>
 
