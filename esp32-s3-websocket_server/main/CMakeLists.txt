@@ -4,18 +4,18 @@
 
 idf_component_register(SRCS
 	"main.cpp"
-	"mqtt.c"
-	"wifi.c"
+	"utils/mqtt.c"
+	"utils/wifi.c"
 	"websocket_server.cpp"
 	"image_processor.cpp"
 	"face_recognizer.cpp"
 	"face_database.c"
-	"storage_manager.c"
+	"utils/storage_manager.c"
 	"face_enroller.cpp"
 	"s3_uploader.c"
-	"time_sync.c"
+	"utils/time_sync.c"
     INCLUDE_DIRS
-        "."
+        "." utils
     EMBED_TXTFILES
         "../certificates/AmazonRootCA1.pem"
         "../certificates/new_certificate.pem"

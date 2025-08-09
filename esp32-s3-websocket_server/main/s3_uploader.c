@@ -5,8 +5,8 @@
 #include "face_database.h"
 #include "string.h"
 #include "cJSON.h"
-#include "config.h"
-#include "time_sync.h"
+#include "utils/config.h"
+#include "utils/time_sync.h"
 
 static const char* TAG = "S3_UPLOADER";
 

@@ -15,9 +15,9 @@
 #include "esp_heap_caps.h" 
 #include "esp_timer.h"
 #include "s3_uploader.h"
-#include "mqtt.h"
+#include "utils/mqtt.h"
 #include "cJSON.h"
-#include "config.h" // Includes secret.h
+#include "utils/config.h" // Includes secret.h
 #include "websocket_server.h"
 
 #if ENABLE_ENROLLMENT 

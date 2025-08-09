@@ -22,7 +22,7 @@
 #include "freertos/task.h"
 
 #include "websocket_server.h"
-#include "config.h"
+#include "utils/config.h"
 #include "cJSON.h"
 #include "image_processor.h" // pass the incoming image to the image processor. No other function on image here
 

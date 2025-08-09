@@ -13,19 +13,19 @@
 #include "esp_timer.h"
 #include "esp_netif.h"
 
-#include "config.h"
+#include "utils/config.h"
 #include "storage_manager.h"
 #include "image_processor.h"
 #include "websocket_server.h"
 
  // linkage with C++
 extern "C" {
-#include "wifi.h"
-#include "time_sync.h"
+#include "utils/wifi.h"
+#include "utils/time_sync.h"
 #include "s3_uploader.h"
 
 #if MQTT_ENABLED
-#include "mqtt.h"
+#include "utils/mqtt.h"
 #endif
 }
 
