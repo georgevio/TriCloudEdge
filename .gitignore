@@ -15,6 +15,7 @@ third_party/
 certificates/
 temp/
 temp
+managed_components/
 
 # Ignore all *.lock files
 *.lock

@@ -88,7 +88,7 @@ static void app_event_handler(void* arg, esp_event_base_t event_base, int32_t ev
 /* Compatibility with C */
 extern "C" void app_main() {
     configure_system_logging();
-    ESP_LOGI(TAG, "Starting Application");
+    ESP_LOGI(TAG, "\033[38;2;173;216;230mXXX TriCloudEdge - Client XXX\033[0m");
 
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());

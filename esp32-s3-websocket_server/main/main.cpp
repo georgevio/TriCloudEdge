@@ -93,7 +93,7 @@ extern "C" void app_main(void) {
     // Immediately set log level
     configure_system_logging();
 
-    ESP_LOGI(TAG, "Starting main application...");
+    ESP_LOGI(TAG, "\033[38;2;173;216;230mXXX TriCloudEdge - SERVER XXX\033[0m");
 
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
